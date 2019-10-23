@@ -18,6 +18,8 @@
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Button Text="First" />
+            <Button Text="Second" Visual="Material" />
         </StackLayout>
     </ContentPage.Content>
     
