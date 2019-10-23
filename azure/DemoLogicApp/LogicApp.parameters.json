@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "logicAppName": {
+      "value": "DemoLogicApp"
+    },
+    "logicAppLocation": {
+      "value": "westus"
+    },
+    "servicebus_1_connectionString": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/0c198148-b97b-42e3-aef2-e3dd059a7fc9/resourceGroups/vs2019demo/providers/Microsoft.KeyVault/vaults/vs2019demo-kv"
+        },
+        "secretName": "servicebusconnection"
+      }
+    }
+  }
+}
