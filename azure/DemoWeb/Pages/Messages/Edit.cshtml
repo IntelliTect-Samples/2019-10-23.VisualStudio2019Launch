@@ -1,0 +1,45 @@
+﻿@page
+@model DemoWeb.Pages.Messages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Messages</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Messages.ID" />
+            <div class="form-group">
+                <label asp-for="Messages.Topic" class="control-label"></label>
+                <input asp-for="Messages.Topic" class="form-control" />
+                <span asp-validation-for="Messages.Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Messages.MessageDate" class="control-label"></label>
+                <input asp-for="Messages.MessageDate" class="form-control" />
+                <span asp-validation-for="Messages.MessageDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Messages.MessageText" class="control-label"></label>
+                <input asp-for="Messages.MessageText" class="form-control" />
+                <span asp-validation-for="Messages.MessageText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
