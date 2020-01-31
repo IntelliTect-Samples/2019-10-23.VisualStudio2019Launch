@@ -19,21 +19,23 @@ steps:
   inputs:
     command: 'restore'
     projects: '$(solution)'
-    feedsToUse: 'config'
+  displayName: Restore
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '$(solution)'
+  displayName: Build
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
     projects: '$(solution)'
+  displayName: Test
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: true
-
+  displayName: Publish
 
